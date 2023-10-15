@@ -1,6 +1,8 @@
+// those are helpers for broken input
 let playerSelection = "It's a player trap!"
 let computerSelection = "It's a computer trap!"
 
+//get the user input
 function getPlayerChoice() {
     let playerChoice = prompt("Player, make your choice", "Rock, Paper or Scissors?")
     playerChoice = playerChoice.toLowerCase()
@@ -15,10 +17,10 @@ function getPlayerChoice() {
         playerSelection = "Scissors";
         break;
     }
-    // console.log(playerSelection)
     return playerSelection
 }
 
+//get the computer choice
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3)
     switch(computerChoice) {
@@ -32,13 +34,14 @@ function getComputerChoice() {
         computerSelection = "Scissors";
         break;
     }
-    // console.log(computerSelection);
     return computerSelection
 }
 
+//call the functions for the choices
 getPlayerChoice()
 getComputerChoice()
 
+//solve the round
 function playRound(playerSel, computerSel) {
     if (playerSel == computerSel) {
         console.log("It's even: " + playerSel + " against " + computerSel)
@@ -63,4 +66,7 @@ function playRound(playerSel, computerSel) {
     }
 }
 
+//call the round
 playRound(playerSelection, computerSelection)
+
+function game()

@@ -40,7 +40,27 @@ getPlayerChoice()
 getComputerChoice()
 
 function playRound(playerSel, computerSel) {
-    console.log("It's a round: " + playerSel + " against " + computerSel)
+    if (playerSel == computerSel) {
+        console.log("It's even: " + playerSel + " against " + computerSel)
+    } else if (playerSel == "Rock") {
+        if (computerSel == "Scissors") {
+            console.log("You win: " + playerSel + " against " + computerSel)
+        } else {
+            console.log("You loose: " + playerSel + " against " + computerSel)
+        }
+    } else if (playerSel == "Paper") {
+        if (computerSel == "Rock") {
+            console.log("You win: " + playerSel + " against " + computerSel)
+        } else {
+            console.log("You loose: " + playerSel + " against " + computerSel)
+        }
+    } else if (playerSel == "Scissors") {
+        if (computerSel == "Paper") {
+            console.log("You win: " + playerSel + " against " + computerSel)
+        } else {
+            console.log("You loose: " + playerSel + " against " + computerSel)
+        }
+    }
 }
 
 playRound(playerSelection, computerSelection)

@@ -40,10 +40,6 @@ function getComputerChoice() {
     return computerSelection
 }
 
-//call the functions for the choices
-getPlayerChoice()
-getComputerChoice()
-
 //solve the round
 function playRound(playerSel, computerSel) {
     if (playerSel == computerSel) {
@@ -82,5 +78,24 @@ function playRound(playerSel, computerSel) {
     }
 }
 
-//call the round
-playRound(playerSelection, computerSelection)
+
+//function for the full game, 5 rounds and the final results
+function game() {
+    for (let i = 0; i < 5; i++) {
+        //call the choices
+        getPlayerChoice()
+        getComputerChoice()
+        //call the round
+        playRound(playerSelection, computerSelection)
+    }
+    if (playerScore == computerScore) {
+        console.log("It's over, and it's even o.O")
+    } else if (playerScore > computerScore) {
+        console.log("It's over, you have the high ground")
+    } else {
+        console.log("It's over, and you are done.")
+    }
+}
+
+//call the game
+game()

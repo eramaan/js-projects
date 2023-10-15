@@ -1,18 +1,37 @@
+let playerChoice = prompt("Player, make your choice", "Rock, Paper or Scissors?")
+playerChoice = playerChoice.toLowerCase()
+let playerSelection = "It's a player trap"
+switch(playerChoice) {
+    case "rock":
+    playerSelection = "Rock";
+    break;
+    case "paper":
+    playerSelection = "Paper";
+    break;
+    case "scissors":
+    playerSelection = "Scissors";
+    break;
+}
+
+console.log(playerSelection)
+
 function getComputerChoice() {
-    let computerNumberChoice = Math.floor(Math.random() * 3)
-    let computerChoice = "It's a trap"
-    switch(computerNumberChoice) {
+    let computerChoice = Math.floor(Math.random() * 3)
+    let computerSelection = "It's a computer trap"
+    switch(computerChoice) {
         case 0:
-        computerChoice = "Rock";
+        computerSelection = "Rock";
         break;
         case 1:
-        computerChoice = "Paper";
+        computerSelection = "Paper";
         break;
         case 2:
-        computerChoice = "Scissors";
+        computerSelection = "Scissors";
         break;
     }
-    console.log(computerChoice);
+    console.log(computerSelection);
 }
 
 getComputerChoice()
+
+

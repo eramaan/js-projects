@@ -116,14 +116,14 @@ function playRound(playerSel, computerSel) {
 
     //to add at the end of every round
     if (playerScore == 5) {
-        divResults.innerHTML = "<h1 style=\"color:green\">It's over, you have the high ground!</p>";
+        divResults.innerHTML = "<h2 style=\"color:#43aa8b; margin-top:2em\">it's over<br />you have the high ground!</p>";
         btnRock.remove()
         btnPaper.remove()
         btnScissors.remove()
         btnSpock.remove()
         btnLizard.remove()
     } else if (computerScore == 5) {
-        divResults.innerHTML = "<p style=\"color:red\">It's over, and you are done</p>";
+        divResults.innerHTML = "<h2 style=\"color:#c1121f; margin-top:2em\">It's over<br />a nice addition to my collection</h2>";
         btnRock.remove()
         btnPaper.remove()
         btnScissors.remove()

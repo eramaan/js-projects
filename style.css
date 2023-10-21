@@ -1,6 +1,7 @@
 * {
     max-width: 800px;
     margin: auto;
+    background-color: #0d1321;
 }
 
 .center {
@@ -10,25 +11,43 @@
 h1 {
     margin-top: 8%;
     font-size: 5vw;
+    color: #3e5c76;
 }
 
 h2 {
-    color: slategray;
+    margin-top: 2vw;
+    color: #1d2d44;
 }
 
-span#score {
+div,
+span {
+    color: #3e5c76;
+}
+
+div#score {
     font-size: 8vw;
+    margin-top: 4%;
 }
-
+ 
 button {
-    border-radius: 50%;
-    min-height: 150px;
-    min-width: 150px;
-    font-size: 3vw;
-}
+    padding: .9em 1.3em .9em;
+    border: 0;
+    box-shadow: inset 0 -8px 0 rgba(255, 255, 255, 0.15);
+    font-size: 1.2em;
+    border-radius: 6px;
+    color: #0d1321;
+    background: #3e5c76;
+    transition: all 0.1s;
+    &:hover {
+      box-shadow: inset 0 -5px 0 rgba(255, 255, 255, 0.15)
+    }
+  }
+
+/* thanks for the buttons 
+https://codepen.io/leenalavanya/pen/xZMWXY */
 
 .row {
-    margin: 5vw 0;
+    margin: 8vw 0;
 }
 
 .row.second {

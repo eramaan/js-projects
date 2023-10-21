@@ -2,9 +2,6 @@
     max-width: 800px;
     margin: auto;
     background-color: #0d1321;
-}
-
-.center {
     text-align: center;
 }
 
@@ -20,7 +17,9 @@ h2 {
 }
 
 div,
-span {
+span,
+p,
+a {
     color: #3e5c76;
 }
 
@@ -60,4 +59,9 @@ https://codepen.io/leenalavanya/pen/xZMWXY */
     justify-content: space-evenly;
     margin-left: 15vw;
     margin-right: 15vw;
+}
+
+footer {
+    padding: 10px;
+    font-size: 20px;
 }

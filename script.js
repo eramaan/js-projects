@@ -1,35 +1,9 @@
-
-
 // those are helpers for broken input
 let playerSelection = "It's a player trap!"
 let computerSelection = "It's a computer trap!"
 //those are for the score
 let playerScore = 0
 let computerScore = 0
-
-
- /*
-//function for the full game, 5 rounds and the final results
-function game() {
-        //call the choices
-        getPlayerChoice()
-        getComputerChoice()
-        //call the round
-        playRound(playerSelection, computerSelection)
-
-    if (playerScore == computerScore) {
-        console.log("It's over, and it's even o.O")
-    } else if (playerScore > computerScore) {
-        console.log("It's over, you have the high ground")
-    } else {
-        console.log("It's over, and you are done.")
-    }
-}
-
-//call the game
-game()
-
-*/
 
 // REWORK from here
 // DOM access
@@ -102,4 +76,20 @@ function playRound(playerSel, computerSel) {
             divResults.innerHTML = divResults.innerHTML + "<br />" + "You loose: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         }
     }
+
+    //to add at the end of every round
+    if (playerScore == 5) {
+        divResults.innerHTML = divResults.innerHTML + "<br />" + "<p style=\"color:green\">It's over, you have the high ground!</p>";
+        btnRock.remove()
+        btnPaper.remove()
+        btnScissors.remove()
+
+    } else if (computerScore == 5) {
+        divResults.innerHTML = divResults.innerHTML + "<br />" + "<p style=\"color:red\">It's over, and you are done</p>";
+        btnRock.remove()
+        btnPaper.remove()
+        btnScissors.remove()
+    }
+
 }
+

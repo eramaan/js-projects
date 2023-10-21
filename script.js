@@ -1,3 +1,5 @@
+
+
 // those are helpers for broken input
 let playerSelection = "It's a player trap!"
 let computerSelection = "It's a computer trap!"
@@ -5,23 +7,54 @@ let computerSelection = "It's a computer trap!"
 let playerScore = 0
 let computerScore = 0
 
-//get the user input
-function getPlayerChoice() {
-    let playerChoice = prompt("Player, make your choice", "Rock, Paper or Scissors?")
-    playerChoice = playerChoice.toLowerCase()
-    switch(playerChoice) {
-        case "rock":
-        playerSelection = "Rock";
-        break;
-        case "paper":
-        playerSelection = "Paper";
-        break;
-        case "scissors":
-        playerSelection = "Scissors";
-        break;
+
+ /*
+//function for the full game, 5 rounds and the final results
+function game() {
+        //call the choices
+        getPlayerChoice()
+        getComputerChoice()
+        //call the round
+        playRound(playerSelection, computerSelection)
+
+    if (playerScore == computerScore) {
+        console.log("It's over, and it's even o.O")
+    } else if (playerScore > computerScore) {
+        console.log("It's over, you have the high ground")
+    } else {
+        console.log("It's over, and you are done.")
     }
-    return playerSelection
 }
+
+//call the game
+game()
+
+*/
+
+// REWORK from here
+// DOM access
+let btnRock = document.querySelector('#rock');
+let btnPaper = document.querySelector('#paper');
+let btnScissors = document.querySelector('#scissors');
+let divResults = document.querySelector('#results');
+
+// DOM listener
+btnRock.addEventListener('click', () => {
+    playerSelection = "Rock";
+    getComputerChoice()
+    playRound(playerSelection, computerSelection)
+});
+btnPaper.addEventListener('click', () => {
+    playerSelection = "Paper";
+    getComputerChoice()
+    playRound(playerSelection, computerSelection)
+});
+btnScissors.addEventListener('click', () => {
+    playerSelection = "Scissors";
+    getComputerChoice()
+    playRound(playerSelection, computerSelection)
+});
+
 
 //get the computer choice
 function getComputerChoice() {
@@ -43,59 +76,30 @@ function getComputerChoice() {
 //solve the round
 function playRound(playerSel, computerSel) {
     if (playerSel == computerSel) {
-        console.log("It's even: " + playerSel + " against " + computerSel)
-        console.log("Player: " + playerScore + ", Computer " + computerScore)
+        divResults.innerHTML = divResults.innerHTML + "<br />" + `It's even: ` + playerSel + ` against ` + computerSel + "<br />" + `Player: ` + playerScore + `, Computer ` + computerScore
     } else if (playerSel == "Rock") {
         if (computerSel == "Scissors") {
-            console.log("You win: " + playerSel + " against " + computerSel)
             playerScore = ++playerScore
-            console.log("Player: " + playerScore + ", Computer " + computerScore)
+            divResults.innerHTML = divResults.innerHTML + "<br />" + "You win: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         } else {
-            console.log("You loose: " + playerSel + " against " + computerSel)
             computerScore = ++computerScore
-            console.log("Player: " + playerScore + ", Computer " + computerScore)
+            divResults.innerHTML = divResults.innerHTML + "<br />" + "You loose: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         }
     } else if (playerSel == "Paper") {
         if (computerSel == "Rock") {
-            console.log("You win: " + playerSel + " against " + computerSel)
             playerScore = ++playerScore
-            console.log("Player: " + playerScore + ", Computer " + computerScore)
+            divResults.innerHTML = divResults.innerHTML + "<br />" + "You win: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         } else {
-            console.log("You loose: " + playerSel + " against " + computerSel)
             computerScore = ++computerScore
-            console.log("Player: " + playerScore + ", Computer " + computerScore)
+            divResults.innerHTML = divResults.innerHTML + "<br />" + "You loose: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         }
     } else if (playerSel == "Scissors") {
         if (computerSel == "Paper") {
-            console.log("You win: " + playerSel + " against " + computerSel)
             playerScore = ++playerScore
-            console.log("Player: " + playerScore + ", Computer " + computerScore)
+            divResults.innerHTML = divResults.innerHTML + "<br />" + "You win: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         } else {
-            console.log("You loose: " + playerSel + " against " + computerSel)
             computerScore = ++computerScore
-            console.log("Player: " + playerScore + ", Computer " + computerScore)
+            divResults.innerHTML = divResults.innerHTML + "<br />" + "You loose: " + playerSel + " against " + computerSel + "<br />" + "Player: " + playerScore + ", Computer " + computerScore
         }
     }
 }
-
-
-//function for the full game, 5 rounds and the final results
-function game() {
-    for (let i = 0; i < 5; i++) {
-        //call the choices
-        getPlayerChoice()
-        getComputerChoice()
-        //call the round
-        playRound(playerSelection, computerSelection)
-    }
-    if (playerScore == computerScore) {
-        console.log("It's over, and it's even o.O")
-    } else if (playerScore > computerScore) {
-        console.log("It's over, you have the high ground")
-    } else {
-        console.log("It's over, and you are done.")
-    }
-}
-
-//call the game
-game()

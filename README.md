@@ -1,10 +1,12 @@
 # js-projects
-JavaScript Projects
+JavaScript Projects The Odin Project course
 
 Rock Paper Scissors project
-// OLD 5 rounds against the randomness - only on console
-// NEW
-First who reaches five point is the winner
+enhanced version -> Rock Paper Scissors Spock Lizard
+
+First to score five points wins
 
 Feeling lucky?
 Give it a run!
+
+live @ https://eramaan.github.io/rock-paper-scissors-spock-lizard/
